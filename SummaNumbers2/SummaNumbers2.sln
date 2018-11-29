@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SummaNumbers2", "SummaNumbers2\SummaNumbers2.csproj", "{C9B52DB9-1952-4B9D-A5C5-D847E0E199AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9B52DB9-1952-4B9D-A5C5-D847E0E199AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9B52DB9-1952-4B9D-A5C5-D847E0E199AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9B52DB9-1952-4B9D-A5C5-D847E0E199AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9B52DB9-1952-4B9D-A5C5-D847E0E199AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
