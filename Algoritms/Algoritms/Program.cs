@@ -10,11 +10,14 @@ namespace Algoritms
     {
         public static void Main(string[] args)
         {
-            //var fib = new Fibnachi();
-            //fib.FibbonachiArray(8);
+            var sicp = new Sicp();
 
-            var scip = new ScipHexlet();
-            Console.WriteLine(scip.F(1));
+            var number = 2;
+            var degree = 5;
+
+            Console.WriteLine(sicp.ExponentiationIterativeUp(number, degree));
+
+            Console.WriteLine(sicp.ExponentiationRecursionDegreeDivisionTwo(number, degree));
         }
     }
 }
