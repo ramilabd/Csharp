@@ -204,15 +204,13 @@ namespace Algoritms
             }
 
             if (degree == 0) { return 1; }
-            if (degree == 1) { return number; }
-
             else if (degree % 2 == 0)
             {
                 return Square(ExponentiationRecursionDegreeDivisionTwo(number, degree / 2));
             }
             else
             {
-                return number * Square(ExponentiationRecursionDegreeDivisionTwo(number, degree - 1));
+                return number * ExponentiationRecursionDegreeDivisionTwo(number, degree - 1);
             }
         }
     }

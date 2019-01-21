@@ -13,7 +13,7 @@ namespace Algoritms
             var sicp = new Sicp();
 
             var number = 2;
-            var degree = 5;
+            var degree = 11;
 
             Console.WriteLine(sicp.ExponentiationIterativeUp(number, degree));
 
