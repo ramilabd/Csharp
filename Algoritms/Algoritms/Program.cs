@@ -12,12 +12,9 @@ namespace Algoritms
         {
             var sicp = new Sicp();
 
-            var number = 2;
-            var degree = 11;
+            Console.WriteLine(sicp.CheckingForSimplicity(8));
 
-            Console.WriteLine(sicp.ExponentiationIterativeUp(number, degree));
 
-            Console.WriteLine(sicp.ExponentiationRecursionDegreeDivisionTwo(number, degree));
         }
     }
 }

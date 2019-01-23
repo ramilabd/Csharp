@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -212,6 +213,85 @@ namespace Algoritms
             {
                 return number * ExponentiationRecursionDegreeDivisionTwo(number, degree - 1);
             }
+        }
+
+        public int AlgoritmEuclidSubtarction(int number1, int number2)
+        {
+            if (number1 == number2)
+            {
+                return number1;
+            }
+            else if (number1 > number2)
+            {
+                return AlgoritmEuclidSubtarction(number1 - number2, number2);
+            }
+            else
+            {
+                return AlgoritmEuclidSubtarction(number2 - number1, number1);
+            }
+        }
+
+        public int AlgoritmEuclidRemainderOfDivision(int number1, int number2)
+        {
+            if (number1 % number2 == 0)
+            {
+                return number2;
+            }
+            else if (number2 % number1 == 0)
+            {
+                return number1;
+            }
+            else if (number1 > number2)
+            {
+                return AlgoritmEuclidRemainderOfDivision(number1 % number2, number2);
+            }
+            else
+            {
+                return AlgoritmEuclidRemainderOfDivision(number2 % number1, number1);
+            }
+        }
+
+        public int AlgoritmEuclidIterative(int number1, int number2)
+        {
+            int Remainder(int n1, int n2)
+            {
+                return n1 % n2;
+            }
+
+            if (number2 == 0)
+            {
+                return number1;
+            }
+            else
+            {
+                return AlgoritmEuclidIterative(number2, Remainder(number1, number2));
+            }
+        }
+
+        public bool CheckingForSimplicity(int number)
+        {
+            int SmallestDivisor(int num)
+            {
+                int FindDivisor(int n, int testNumber)
+                {
+                    if ((testNumber * testNumber) > n)
+                    {
+                        return n;
+                    }
+                    else if (number % testNumber == 0)
+                    {
+                        return testNumber;
+                    }
+                    else
+                    {
+                        return FindDivisor(n, testNumber + 1);
+                    }
+                }
+
+                return FindDivisor(number, 2);
+            }
+
+            return SmallestDivisor(number) == number;
         }
     }
 }
