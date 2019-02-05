@@ -8,12 +8,10 @@ namespace Algoritms
 {
     public class Program
     {
+        
         public static void Main(string[] args)
         {
-            var sicp = new Sicp();
-
-            Console.WriteLine(sicp.CheckingForSimplicity(8));
-
+            Console.WriteLine(Sicp.ExponentiationRecursion(2, 5));
 
         }
     }

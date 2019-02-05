@@ -3,6 +3,7 @@ using System.CodeDom;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Resources;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -12,8 +13,10 @@ namespace Algoritms
 {
     public class Sicp
     {
-        // f(n) = n if n < 3, and f(n) = f(n - 1) + 2f(n - 2) + 3f(n - 3) if n >= 3.
-        public int Function(int n)
+        public delegate int Inc(int number);
+        public delegate int Square(int number);
+
+        public static int Function(int n)  // f(n) = n if n < 3, and f(n) = f(n - 1) + 2f(n - 2) + 3f(n - 3) if n >= 3.
         {
             if (n < 3)
             {
@@ -25,7 +28,7 @@ namespace Algoritms
             }
         }
 
-        public int FactorialRecursion(int number)
+        public static int FactorialRecursion(int number)
         {
             if (number == 0 || number == 1)
             {
@@ -35,7 +38,7 @@ namespace Algoritms
             return number * FactorialRecursion(number - 1);
         }
 
-        public int FactorialIterative(int number)
+        public static int FactorialIterative(int number)
         {
             int Iter(int counter, int acc)
             {
@@ -50,7 +53,7 @@ namespace Algoritms
             return Iter(1, 1);
         }
 
-        public int FibonachiRecursion(int n)
+        public static int FibonachiRecursion(int n)
         {
             if (n == 0)
             {
@@ -103,7 +106,7 @@ namespace Algoritms
             }
         }*/
 
-        public int PascalTriangle(int row, int column)
+        public static int PascalTriangle(int row, int column)
         {
             if (column > row)
             {
@@ -123,7 +126,7 @@ namespace Algoritms
             }
         }
 
-        public int ExponentiationRecursion(int number, int degree)
+        public static int ExponentiationRecursion(int number, int degree)
         {
             if (degree == 0)
             {
@@ -133,7 +136,7 @@ namespace Algoritms
             return number * ExponentiationRecursion(number, degree - 1);
         }
 
-        public int ExponentiationLoop(int number, int degree)
+        public static int ExponentiationLoop(int number, int degree)
         {
             if (degree == 0) { return 1; }
 
@@ -148,7 +151,7 @@ namespace Algoritms
             return result;
         }
 
-        public int ExponentiationIterativeUp(int number, int degree)
+        public static int ExponentiationIterativeUp(int number, int degree)
         {
             int Iter(int counter, int acc)
             {
@@ -163,7 +166,7 @@ namespace Algoritms
             return Iter(1, 1);
         }
 
-        public int ExponentiationIterativeDown(int number, int degree)
+        public static int ExponentiationIterativeDown(int number, int degree)
         {
             int Iter(int counter, int acc)
             {
@@ -175,7 +178,7 @@ namespace Algoritms
             return Iter(degree, 1);
         }
 
-        public int ExponentiationIterativeDegreeDivisionTwo(int number, int degree)
+        public static int ExponentiationIterativeDegreeDivisionTwo(int number, int degree)
         {
             int Iter(int counter, int acc)
             {
@@ -197,7 +200,7 @@ namespace Algoritms
             }
         }
 
-        public int ExponentiationRecursionDegreeDivisionTwo(int number, int degree)
+        public static int ExponentiationRecursionDegreeDivisionTwo(int number, int degree)
         {
             int Square(int n)
             {
@@ -215,7 +218,7 @@ namespace Algoritms
             }
         }
 
-        public int AlgoritmEuclidSubtarction(int number1, int number2)
+        public static int AlgoritmEuclidSubtarction(int number1, int number2)
         {
             if (number1 == number2)
             {
@@ -231,7 +234,7 @@ namespace Algoritms
             }
         }
 
-        public int AlgoritmEuclidRemainderOfDivision(int number1, int number2)
+        public static int AlgoritmEuclidRemainderOfDivision(int number1, int number2)
         {
             if (number1 % number2 == 0)
             {
@@ -251,7 +254,7 @@ namespace Algoritms
             }
         }
 
-        public int AlgoritmEuclidIterative(int number1, int number2)
+        public static int AlgoritmEuclidIterative(int number1, int number2)
         {
             int Remainder(int n1, int n2)
             {
@@ -268,7 +271,7 @@ namespace Algoritms
             }
         }
 
-        public bool CheckingForSimplicity(int number)
+        public static bool CheckingForSimplicity(int number)
         {
             int SmallestDivisor(int num)
             {
@@ -293,5 +296,30 @@ namespace Algoritms
 
             return SmallestDivisor(number) == number;
         }
+
+        public static int Repeated(int number, int count, Inc func)
+        {
+            var counter = 0;
+
+            while (counter < count)
+            {
+                number = func(number);
+                counter = counter + 1;
+            }
+
+            return number;
+        }
+
+        public static int RepeatedRecursion(int number, int count, Inc func)
+        {
+            if (count == 0)
+            {
+                return number;
+            }
+
+            number = func(number);
+            return Repeated(number, count - 1, func);
+        }
+
     }
 }
