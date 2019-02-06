@@ -8,5 +8,9 @@ namespace ProgrammingBasics
 {
     class FirstAcquaintance
     {
+        public static string GetGreetingMessage(string name, double salary)
+        {
+            return $"Hello, {name}, your salary is {Math.Ceiling(salary)}";
+        }
     }
 }
