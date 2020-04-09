@@ -22,7 +22,7 @@ namespace MyAge
 			t.GetDateTimeFormats();*/
 
 			InputDate d = new InputDate(17, 12, 31);
-			Console.WriteLine(d);
+			Console.WriteLine("Hello");
 		}
 	}
 }
