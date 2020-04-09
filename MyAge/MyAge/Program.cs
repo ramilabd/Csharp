@@ -21,8 +21,8 @@ namespace MyAge
 			DateTime t;
 			t.GetDateTimeFormats();*/
 
-			InputDate d = new InputDate(17,12,31);
-			Console.WriteLine(d.InfoInputDate());
+			InputDate d = new InputDate(17, 12, 31);
+			Console.WriteLine(d);
 		}
 	}
 }
